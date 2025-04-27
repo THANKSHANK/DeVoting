@@ -6,19 +6,18 @@
     grid-template-columns: 1fr 3fr 1fr;
     gap: 2rem;
 }
-.voter{
-    
-    background-color: #231E39;
+.voter {
+    background-color: #fff4e6; /* light orange background */
     border-radius: 25px;
-    box-shadow: 10px 10px 15px rgba(0,0,0,0.35);
-    color: #B3B8CD;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    color: #ff7f00; /* orange text */
     padding: 2rem;
-}
+  }
 
 
 .voter__container__box{
     text-align: center;
-    border: 1px dotted #9a02ac;
+    border: 1px dotted #ac2a02;
     border-radius: 5px;
 }
 
@@ -42,29 +41,29 @@
 /* //////////////////////////////RESISTER */
 
 .register{
-    background-color: #231E39;
+    background-color: #39281e;
     padding: 1rem;
     border-radius: .5rem;
     display: grid;
     gap: 1rem;
 }
 
-.Candidate{
-    background-color: #9a02ac;
+.Candidate {
+    background-color: #ff7f00; /* orange button */
     padding: .5rem;
     border-radius: .2rem;
     cursor: pointer;
-}
+  }
 
-.Candidate button{
+  .Candidate button {
     background-color: transparent;
     border: 0;
     outline: none;
-    color: #fff;
+    color: #ffffff; /* white text */
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-}
+  }
 
 
 
@@ -76,7 +75,7 @@
     width: 15rem;
     height: 15rem;
     padding: 1rem;
-    background-color: #231E39;
+    background-color: #39281e;
     border-radius: 25px;
     box-shadow: 10px 10px 15px rgba(0,0,0,0.35);
     color: #B3B8CD;
@@ -90,10 +89,10 @@
 }
 
 .voterInfo_paragraph{
-    background-color: #231E39;
+    background-color: #392a1e;
     border-radius: 25px;
     box-shadow: 10px 10px 15px rgba(0,0,0,0.35);
-    color: #B3B8CD;
+    color: #cdbcb3;
     height: 9rem;
     padding: 1rem;
 }
@@ -108,18 +107,18 @@
 /* //////////////////// */
 
 .sideInfo{
-    background-color: #231E39;
+    background-color: #39291e;
     padding: .5rem 1rem;
     border-radius: 1rem;
     color: #B3B8CD;
 }
 .sideInfo_box h4{
-    background-color: #9a02ac;
+    background-color: #ac4302;
     padding: .5rem;
     border-radius: .2rem;
 }
 .sideInfo_box .sideInfo_para{
-    background-color: #9a02ac;
+    background-color: #ac6e02;
     padding: .5rem;
     border-radius: .2rem;
 }
@@ -131,7 +130,7 @@
 
 .card_box{
     line-height: 1;
-    border: 1px solid #9a02ac;
+    border: 1px solid #ac6002;
     padding: .2rem;
     box-shadow: 10px 10px 15px rgba(0,0,0,0.35);
     border-radius: .3rem;
@@ -144,7 +143,7 @@
 /* ////////////////////////////USER LIST */
 
 .createdVorter__info{
-    background-color: #231E39;
+    background-color: #39241e;
     border-radius: 25px;
     box-shadow: 10px 10px 15px rgba(0,0,0,0.35);
     color: #B3B8CD;

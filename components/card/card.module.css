@@ -8,15 +8,14 @@
     gap: 2rem;
 }
 
-.card_box{
-    background-color: #231E39;
-    box-shadow: 10px 10px 15px rgba(0,0,0,0.35);
-    color: #B3B8CD;
+.card_box {
+    background-color: #fff4e6; /* light orange background */
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
+    color: #ff7f00; /* orange text */
     text-align: center;
     overflow: hidden;
     border-radius: .5rem;
 }
-
 .image img{
  width: 100%;
 }
@@ -26,17 +25,16 @@
     padding: 0 1.5rem;
 }
 
-.card_vote{
-    color: #9a02ac;
+.card_vote {
+    color: #ff7f00; /* orange vote count */
 }
 
-.total{
-    background-color: #9a02ac;
+.total {
+    background-color: #ff7f00; /* orange background */
     padding: .5rem;
     border-radius: .2rem;
     font-weight: 900;
-    letter-spacing: 1;
-    color: #fff;
+    color: #ffffff; /* white text */
     text-transform: uppercase;
 }
 
@@ -49,15 +47,15 @@
     padding: .5rem;
 }
 
-.card_button button{
-    background-color: #9a02ac;
-    box-shadow: 10px 10px 15px rgba(0,0,0,0.35);
+.card_button button {
+    background-color: #ff7f00;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
     border: none;
     outline: none;
     padding: .5rem 1rem;
     font-size: 1rem;
     font-weight: 500;
-    color: #fff;
+    color: #ffffff;
     border-radius: .2rem;
     cursor: pointer;
 }

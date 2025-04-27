@@ -1,50 +1,56 @@
 // scripts/measureGas.js
-const hre = require("hardhat");
+const { ethers } = require("hardhat");
 
 async function main() {
-  const [owner, voter, candidate] = await hre.ethers.getSigners();
+  // 1 Deploy a fresh contract
+  const [owner, voter] = await ethers.getSigners();
+  const Voting = await ethers.getContractFactory("Create");
+  const voting = await Voting.deploy();
+  await voting.deployed();
 
-  // 1. Deploy the contract
-  const Create = await hre.ethers.getContractFactory("Create", owner);
-  const create = await Create.deploy();
-  await create.deployed();
-  console.log("✅ Contract deployed to:", create.address);
+  // 2 Helper that executes a tx and prints gas
+  async function logGas(promise, label) {
+    const tx = await promise;
+    const rc = await tx.wait();
+    console.log(
+      `${label.padEnd(15)} | gasUsed = ${rc.gasUsed.toString().padStart(7)}`
+    );
+    return rc.gasUsed;
+  }
 
-  // 2. Measure setCandidate(...)
-  const txSet = await create.setCandidate(
-    candidate.address,
-    "30",                   // age
-    "Alice",                // name
-    "https://ipfs.io/img",  // image URI
-    "ipfs://metadata"       // metadata URI
+  /* --- Measure core functions --- */
+  await logGas(
+    voting
+      .connect(owner)
+      .setCandidate(
+        voter.address,
+        "30",
+        "Alice",
+        "ipfs://image",
+        "ipfs://meta"
+      ),
+    "setCandidate"
   );
-  const rcSet = await txSet.wait();
-  console.log(`setCandidate() gas used: ${rcSet.gasUsed.toString()}`);
 
-  // 3. Measure voterRight(...)
-  const txAuth = await create.voterRight(
-    voter.address,
-    "Bob",                  // name
-    "https://ipfs.io/img2", // image URI
-    "ipfs://voterMeta"      // metadata URI
+  await logGas(
+    voting
+      .connect(owner)
+      .voterRight(
+        voter.address,
+        "Alice",
+        "ipfs://avatar",
+        "ipfs://meta"
+      ),
+    "voterRight"
   );
-  const rcAuth = await txAuth.wait();
-  console.log(`voterRight()   gas used: ${rcAuth.gasUsed.toString()}`);
 
-  // 4. Measure vote(...)
-  // extract candidateId from the event
-  const candidateId = rcSet.events.find(e => e.event === "CandidateCreate")
-                         .args.candidateId;
-  const txVote = await create
-    .connect(voter)
-    .vote(candidate.address, candidateId);
-  const rcVote = await txVote.wait();
-  console.log(`vote()         gas used: ${rcVote.gasUsed.toString()}`);
+  await logGas(
+    voting.connect(voter).vote(voter.address, 1),
+    "vote"
+  );
 }
 
-main()
-  .then(() => process.exit(0))
-  .catch(error => {
-    console.error(error);
-    process.exit(1);
-  });
+main().catch((e) => {
+  console.error(e);
+  process.exit(1);
+});

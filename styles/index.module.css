@@ -12,27 +12,26 @@
     gap: 2rem;
 }
 
-.winner_info{
-    background-color: #231E39;
+.winner_info {
+    background-color: #fff4e6; /* light orange */
     padding: 1rem;
     border-radius: .2rem;
-
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     align-items: center;
-}
+  }
 
 
-.winner_message{
-    background-color: #231E39;
+  .winner_message {
+    background-color: #ff7f00; /* orange */
     padding: 2rem;
     border-radius: .2rem;
     font-size: 1.5rem;
-    color: #B3B8CD;
+    color: #ffffff; /* white text */
     line-height: 0;
     position: relative;
-}
+  }
 
 .winner_message small{
     font-size: 5rem;
@@ -43,24 +42,24 @@
 
 }
 
-
-.candidate_list{
-    background-color: #9a02ac;
+.candidate_list {
+    background-color: #ff7f00; /* orange header */
     font-size: 1rem;
     padding: .1rem 1rem;
-}
+    color: #ffffff;
+  }
 
 .candidate_list p{
     font-weight: 600;
 }
-.candidate_list span{
-    background-color: #231E39;
+.candidate_list span {
+    background-color: #ffffff; /* white background */
     padding: .5rem;
     margin-left: .5rem;
-    color: #B3B8CD;
+    color: #ff7f00; /* orange text */
     border-radius: .2rem;
-}
-
+    font-weight: bold;
+  }
 
 
 @media screen  and (max-width: 35em){

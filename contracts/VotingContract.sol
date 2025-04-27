@@ -38,6 +38,7 @@ contract Create {
     mapping(address => Candidate) public candidates;
 
     /////////////END
+    
     ////////////VOTERS////////////////////////
 
     address[] public votedVoters;

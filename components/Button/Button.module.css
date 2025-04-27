@@ -1,18 +1,16 @@
-
-
-.button{
+.button {
     margin-block: 2rem;
     background-color: transparent;
-    border: 1px dotted #9a02ac;
+    border: 1px dotted #ff7f00; /* orange border */
     padding: .5rem 1rem;
-    color: #9a02ac;
+    color: #ff7f00; /* orange text */
     border-radius: 1rem;
     cursor: pointer;
     font-weight: 600;
     transition: all .4s ease-in-out;
 }
 
-.button:hover{
-    background-color: #9a02ac;
-    color: #231E39;
+.button:hover {
+    background-color: #ff7f00; /* orange background on hover */
+    color: #ffffff; /* white text on hover */
 }

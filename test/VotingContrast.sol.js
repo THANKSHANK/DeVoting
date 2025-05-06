@@ -4,7 +4,7 @@
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
 
-describe("VotingContract – Holesky-fork tests", function () {
+describe("VotingContract", function () {
   // reusable variables
   let Voting, voting;
   let owner;               // organiser / contract deployer

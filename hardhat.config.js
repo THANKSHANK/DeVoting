@@ -1,9 +1,15 @@
-// hardhat.config.js
 require("@nomicfoundation/hardhat-toolbox");
 require("dotenv").config();
-// hardhat.config.js
-require("dotenv").config();
-
+require("hardhat-gas-reporter");
+module.exports = {
+  solidity: "0.8.19",
+  gasReporter:{
+    enabled: true,
+    currency: "USD",
+    gasPrice: 5,
+    coinmarketcap: process.env.COINMARKETCAP_API_KEY,
+  }
+};
 module.exports = {
   solidity: "0.8.19",
   networks: {
